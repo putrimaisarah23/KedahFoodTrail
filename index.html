@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+   <div class="sidebar">
+    <h3>Filter Restaurants</h3>
+
+    <button class="filter-btn active" onclick="filterRestaurants('all')">
+        🍽️ All
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('cafe')">
+        ☕ Cafés
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('japanese')">
+        🍣 Japanese Food
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('local')">
+        🍛 Local Food
+    </button>
+</div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-area">
+
+        <div class="top-search">
+            <input type="text" id="searchInput" placeholder="🔍 Search restaurant">
+        </div>
+
+        <!-- HERO + SECTIONS START HERE -->
+
+
+
+
+
+
+
+<section class="hero">
+    <h2>Discover the Best Restaurants in Kedah</h2>
+
+    <p>
+        Explore Kedah's rich culinary heritage<br>through
+        10 selected restaurants<br>featuring local flavours
+        and unique dining experiences.
+    </p>
+<br>
+<br>
+    <a href="restaurants.html" class="btn">
+        Explore Restaurants
+    </a>
+</section>
+
+<section class="about">
+    <h2>About Kedah Food</h2>
+
+    <p>
+        Kedah is known for its diverse food culture.
+        This website introduces 10 must-visit restaurants
+        across Kedah.
+    </p>
+</section>
+
+
+
+<section class="featured">
+    <h2>⭐ Featured Restaurants ⭐</h2>
+
+    <div class="card-container">
+
+        <div class="card cafe">
+            <img src="pic/tersorok.jpg">
+            <h3>Tersorok Cafe</h3>
+            <p>Sungai Petani</p>
+        </div>
+
+       
+        <div class="card local food">
+            <img src="pic/morning.jpg">
+            <h3>Morning Kedah</h3>
+            <p>Alor Setar</p>
+        </div>
+	
+	<div class="card japanese">
+            <img src="pic/sushi.jpg">
+            <h3>Sushi Ya</h3>
+            <p>Sungai Petani</p>
+        </div>
+
+    </div>
+<br>
+
+    <a href="restaurants.html" class="btn">
+        View All 10 Restaurants
+    </a>
+
+</section>
+
+<div class="button-container">	
+<button onclick="location.href='restaurants.html'">Next</button>	
+</div>
+</div>
+</div>
+
+<footer>
+    <p>© 2026 Kedah Food Trail</p>
+</footer>
+
+<script>
+function filterRestaurants(category) {
+    let cards = document.querySelectorAll('.card');
+    let buttons = document.querySelectorAll('.filter-btn');
+
+    // remove active class semua button
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // add active pada button yang klik
+    event.target.classList.add('active');
+
+    cards.forEach(card => {
+
+        if (category === 'all') {
+            card.style.display = "block";
+        } else {
+            if (card.classList.contains(category)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        }
+
+    });
+}
+</script>
+
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function () {
+    let input = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let name = card.querySelector("h3").innerText.toLowerCase();
+
+        if (name.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

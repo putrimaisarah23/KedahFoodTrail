@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Tersorok Cafe</h2>
+
+<img src="pic/tersorok.jpg"
+alt="Tersorok Cafe"
+class="main-restaurant-img">
+
+<p class="desc">
+  Tersorok Cafe is a hidden-style café located in Sungai Petani that offers a calm and relaxed dining experience away from the busy crowd. It is known for its cozy, “hidden gem” concept that attracts customers looking for a quiet place to eat and chill.
+<br><br>
+
+The café serves a mix of local Malaysian dishes, light Western meals, snacks, and drinks, making it suitable for breakfast, lunch, or casual hangouts. Its menu is simple but satisfying, focusing on comfort food and easy dining options.
+<br><br>
+
+Tersorok Cafe is also popular among locals for its peaceful atmosphere and affordable meals, making it a comfortable spot for friends, families, and solo visitors who want a relaxed food experience.
+</p>
+
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location:Bandar Puteri Jaya, 08000 Sungai Petani, Kedah.</p>
+
+<p>🕒 Opening Hours: 8:30 AM - 11:30 AM (Mon-Thu) & 11:30 AM - 2:30 PM (Sat-Sun)</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.6 / 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/ft1.jpg" alt="Mee Kari & Laksa Kedah">
+
+<h3>Mee Kari & Laksa Kedah</h3>
+
+<p>
+Mee Kari is a creamy coconut curry noodle dish served with noodles, chicken or seafood, and simple toppings like egg and tofu.
+<br>
+Laksa Kedah is a traditional Kedah noodle dish with a rich, sour fish-based broth served with rice noodles and fresh herbs.</p>
+<p><b>RM10.80 & RM9.80</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/ft2.jpg" alt="Matcha Cake Batik & Biscoff Burnt Cheese Cake">
+
+<h3>Matcha Cake Batik & Biscoff Burnt Cheese Cake</h3>
+
+<p>
+Matcha Cake Batik is a layered dessert combining traditional cake batik with a mild matcha flavor for a sweet and slightly earthy taste.
+<br>
+Biscoff Burnt Cheesecake is a creamy burnt cheesecake topped or mixed with Biscoff spread, giving a rich caramelized and slightly spiced flavor.
+
+</p>
+
+<p><b>RM9.80 & RM13.80</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/ft3.jpg" alt="Nasi Lemak & Nasi Kerabu">
+
+<h3>Nasi Lemak & Nasi Kerabu</h3>
+
+<p>
+Nasi Lemak is a classic Malaysian dish of coconut milk rice served with sambal, fried anchovies, peanuts, boiled egg, and cucumber.<br>
+Nasi Kerabu is a traditional Kelantan-style rice dish usually served with herbs, salted fish or fried chicken, and a variety of spicy sambal.</p>
+<p><b>RM5.80 & RM12.80</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/tersorok.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>The café feels calm and hidden away, giving a peaceful vibe that makes you want to sit and relax for a while. The food is simple and satisfying, and the place feels comfortable for a quiet hangout or casual meal.</p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Tersorok Cafe',
+'pic/tersorok.jpg',
+'tersorok.html'
+)">
+❤️ Add to Favorites
+</button>
+
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/wVm1qDEsfYYYAGhPA"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='galley.html'">Back</button>	
+<button onclick="location.href='overstepped.html'">Next</button>
+</div>
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+
+</body>
+</html>

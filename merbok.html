@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Merbok Roasted</h2>
+
+<img src="pic/merbok.jpg"
+alt="Merbok Roasted"
+class="main-restaurant-img">
+
+<p class="desc">
+Merbok Roasted is a local restaurant in Sungai Petani known for serving roasted-style dishes in a casual and comfortable dining environment. <br><br>
+
+The restaurant is especially recognized for its roasted chicken, rice meals, and other local favorites, offering satisfying portions suitable for lunch and dinner with family and friends. <br><br>
+
+With its simple atmosphere and focus on everyday comfort food, it has become a convenient choice for diners looking for tasty local meals at affordable prices.
+
+</p>
+</p>
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: Directly opposite UiTM Kedah campus entrance, Merbok.</p>
+
+<p>🕒 Opening Hours: 4:30 AM - 2:00 AM (Closed Fridays)</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.0/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/frm3.jpg" alt="Nasi Ayam Tambah">
+
+<h3>Nasi Ayam Tambah</h3>
+
+<p>
+Nasi Ayam Tambah is a chicken rice served with an extra portion of chicken for a more filling meal.</p>
+<p><b>RM8.50</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fr1.jpg" alt="Nasi Ayam Biasa">
+
+<h3>Nasi Ayam Biasa</h3>
+
+<p>
+Nasi Ayam Biasa is a regular chicken rice served with chicken, rice, and sauces.
+<p><b>RM7</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fr2.jpg" alt="Ayam Panggang">
+
+<h3>Ayam Panggang</h3>
+
+<p>
+Ayam Panggang is a grilled chicken marinated with spices for a smoky and flavorful taste.</p>
+<p><b>RM27</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>Suitable for students and local residents who are looking for roasted food at a reasonable price.
+The taste of the food can be said to be satisfactory and the portion is quite worth the price paid.
+Its location near UiTM makes it easy for students to visit.</p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Merbok Roasted',
+'pic/merbok.jpg',
+'merbok.html'
+)">
+❤️ Add to Favorites
+</button>
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/ERD1ySChWE1AMmHD6"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='sheikh.html'">Back</button>	
+<button onclick="location.href='alor.html'">Next</button>
+</div>
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

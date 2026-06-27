@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Big Galley's Cafe</h2>
+
+<img src="pic/gall.jpg"
+alt="Big Galley's Cafe"
+class="main-restaurant-img">
+
+<p class="desc">
+    Big Galley’s Cafe is a popular café-style restaurant in Alor Setar that serves a mix of Western, Asian, and local fusion dishes in a casual dining environment.
+<br><br>
+
+Known for its generous portions and wide menu variety, the restaurant offers grilled meals, pasta, rice dishes, snacks, and desserts, making it a favourite spot for families and group gatherings.
+<br><br>
+
+Big Galley’s Cafe is also well known for its comfortable seating and relaxed atmosphere, making it a suitable place for both casual dining and social meetups.
+</p>
+
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 7 Ground Floor, Kompleks Perniagaan LITC, 05150 Alor Setar, Kedah, Malaysia.</p>
+
+<p>🕒 Opening Hours: 10:00 AM – 11:30 PM (Tuesday-Sunday)</p>
+
+<p>💰 Price Range: RM20 – RM40 (per person)</p>
+
+<p>⭐ Rating: 4.1 / 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fg1.jpg" alt="Grilled Lamb Chop">
+
+<h3>Grilled Lamb Chop</h3>
+
+<p>
+Grilled lamb chop is a dish made from tender lamb meat seasoned and grilled until juicy, with a smoky flavor and often served with sauce and side dishes like fries or vegetables.</p>
+
+<p><b>RM23.60</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fg2.jpg" alt="Chicken Chop Fried Rice">
+
+<h3>Chicken Chop Fried Rice</h3>
+
+<p>
+Chicken chop fried rice is a dish made with fried rice topped with a crispy or grilled chicken chop, usually served with sauce and sometimes vegetables or fried egg.
+</p>
+
+<p><b>RM21.40</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fg3.jpg" alt="Macaroni & Cheese">
+
+<h3>Macaroni & Cheese</h3>
+
+<p>
+Macaroni and cheese is a simple dish made with macaroni pasta mixed in a creamy, cheesy sauce until smooth and rich in flavour.</p>
+<p><b>RM18.10</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/galley.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p> I had a good experience at Big Galley’s Cafe. The food was tasty with big portions, and there were many choices on the menu. The place was comfortable and nice for hanging out with friends or family.</p> 
+</div> 
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Big Galleys Cafe',
+'pic/gall.jpg',
+'galley.html'
+)">
+❤️ Add to Favorites
+</button>
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/WAkcmSmgrJWBJuJu6"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+</div>
+
+
+<div class="button-container">	
+<button onclick="location.href='1997.html'">Back</button>	
+<button onclick="location.href='tersorok.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+
+</body>
+</html>

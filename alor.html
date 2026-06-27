@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Alor Setar Breakfast Station</h2>
+
+<img src="pic/alor.jpg"
+alt="Alor Setar Breakfast Station"
+class="main-restaurant-img">
+
+<p class="desc">
+Alor Setar Breakfast Station is a casual breakfast spot in Alor Setar that serves a variety of local Malaysian morning favourites in a relaxed dining environment.
+<br><br>
+
+It is known for simple, comforting meals such as nasi lemak, toast, noodles, and traditional kopi-style drinks, making it a popular place for daily breakfast and light meals.
+<br><br>
+
+The restaurant focuses on affordable, everyday food with a homely feel, attracting locals and families who prefer a quick and satisfying start to the day.</p>
+</p>
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 24, 3, K8, Taman Puspa Kencana, 05460 Alor Setar, Kedah, Malaysia.</p>
+
+<p>🕒 Opening Hours: 7:30 AM - 12:30 PM (Daily)</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.3/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fa3.jpg" alt="Nasi Lemak Ayam">
+
+<h3>Nasi Lemak Ayam</h3>
+
+<p>
+Nasi lemak ayam is a rice cooked in coconut milk served with fried chicken, sambal, egg, and anchovies.</p>
+<p><b>RM14.70</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fa2.jpg" alt="Telur Kapit">
+
+<h3>Telur Kapit</h3>
+
+<p>
+Telur kapit is a crispy folded egg snack, often served as a light bite or side dish.
+<p><b>RM7.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fa1.jpg" alt="Roti Goyang">
+
+<h3>Roti Goyang</h3>
+
+<p>
+Roti goyang is a toast with soft-boiled “runny” egg, usually eaten with soy sauce and pepper.</p>
+<p><b>RM10.50</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/alor.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>Alor Setar Breakfast Station is an excellent place for breakfast lovers. The restaurant offers a unique combination of local and Western-inspired breakfast dishes at affordable prices. The Set Nasi Lemak Ayam is flavorful and filling, while the Roti Teloq Kapit and Roti Goyang provide a simple yet enjoyable morning meal. The service is friendly, the atmosphere is comfortable, and the food quality is consistently good. Overall, it is highly recommended for anyone looking for a satisfying breakfast experience in Alor Setar.</p> 
+</div> 
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Alor Setar Breakfast Station',
+'pic/alor.jpg',
+'alor.html'
+)">
+❤️ Add to Favorites
+</button>
+
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/xbpAvzALLbHcbgwj6"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='merbok.html'">Back</button>	
+<button onclick="location.href='sushi.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

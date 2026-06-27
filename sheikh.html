@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Sheikh Bistro</h2>
+
+<img src="pic/sheikh.jpg"
+alt="Sheikh Bistro"
+class="main-restaurant-img">
+
+<p class="desc">
+Sheikh Bistro is a well-known casual dining restaurant in Sungai Petani that serves a variety of Malaysian daily meals in a comfortable and family-friendly environment.
+<br><br>
+
+Known for its wide range of local favorites, the restaurant offers rice dishes, noodles, roti-based meals, and other popular Malaysian comfort foods, making it a convenient choice for breakfast, lunch, and dinner.
+<br><br>
+
+With its relaxed atmosphere and diverse menu selection, Sheikh Bistro has become a popular spot for families, friends, and customers looking for everyday local dining options.
+</p>
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 7, Jalan Jati 1, Kompleks Perniagaan Amanjaya, 08000 Sungai Petani, Kedah, Malaysia.</p>
+
+<p>🕒 Opening Hours: 7:00 AM - 1:00 AM (Daily)</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.1/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fs3.jpg" alt="Nasi Kandar">
+
+<h3>Nasi Kandar</h3>
+
+<p>
+Nasi Kandar is a popular Malaysian rice dish served with a variety of curries, side dishes, and meat or seafood options.
+</p>
+<p><b>RM14.70</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fs2.jpg" alt="Roti Canai">
+
+<h3>Roti Canai</h3>
+
+<p>
+Roti Canai is a popular Malaysian flatbread that is usually served with curry, dhal, or other dipping sauces.
+</p>
+
+<p><b>RM2</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fs1.jpg" alt="Mee Kari">
+
+<h3>Mee Kari</h3>
+
+<p>
+Mee Kari is a flavorful noodle dish served in a rich curry-based broth with various toppings such as chicken, tofu, and vegetables.
+</p>
+<p><b>RM7</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/sheikh.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>Very clean environment, friendly service, and spacious dining area and it is a reliable spot for a satisfying meal with family or friends at reasonable prices.</p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Sheikh Bistro',
+'pic/sheikh.jpg',
+'sheikh.html'
+)">
+❤️ Add to Favorites
+</button>
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/hY6fvhMWzFwzG8Ae7"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='morning.html'">Back</button>	
+<button onclick="location.href='merbok.html'">Next</button>
+</div>
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

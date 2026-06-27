@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Morning Kedah Restaurant</h2>
+
+<img src="pic/morning.jpg"
+alt="Morning Kedah Retaurant Amanjaya"
+class="main-restaurant-img">
+
+<p class="desc">
+Morning Kedah Restaurant is a local restaurant in Alor Setar that serves a variety of traditional Malaysian dishes in a casual and family-friendly dining environment.
+<br><br>
+
+Known for its breakfast and daily meal selections, the restaurant offers local favorites such as porridge, noodle dishes, rice meals, and other comforting Malaysian foods that suit different tastes.
+<br><br>
+
+With its simple atmosphere and affordable menu, it has become a convenient spot for customers looking for everyday meals and a relaxed dining experience.
+
+</p>
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 8B, Tingkat Bawah Jalan Tengah, Off Jalan Tunku Abdul Rahman Putra, 05100 Alor Setar, Kedah, Malaysia.</p>
+
+<p>🕒 Opening Hours: 7:30 AM - 10:00 PM (Daily)</p>
+
+<p>💰 Price Range: RM20 – RM40 (per person)</p>
+
+<p>⭐ Rating: 4.5/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fm3.jpg" alt="Mee Kari">
+
+<h3>Mee Kari</h3>
+
+<p>
+Mee Kari is a yellow noodles served in a rich and flavorful curry broth with various toppings.</p>
+<p><b>RM9</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fm1.jpg" alt="Nasi Sambal">
+
+<h3>Nasi Sambal</h3>
+
+<p>
+Nasi Sambal is a rice served with spicy sambal and side dishes for a tasty local meal.
+</p>
+
+<p><b>RM13</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fm2.jpg" alt="Chicken Porridge">
+
+<h3>Chicken Porridge</h3>
+
+<p>
+Chicken Porridge is a soft rice porridge served with chicken, perfect as a warm and comforting dish.</p>
+<p><b>RM8</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/morning.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>Morning Kedah Restaurant offers a pleasant dining experience with a wide selection of local dishes. The Mee Kari is rich and flavorful, while the Nasi Sambal provides a satisfying balance of spicy and savory tastes. The restaurant is clean, affordable, and suitable for family meals. Overall, it is a recommended place for anyone who wants to experience authentic Kedah cuisine.</p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Morning Kedah  Restaurant',
+'pic/morning.jpg',
+'morning.html'
+)">
+❤️ Add to Favorites
+</button>
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/hY6fvhMWzFwzG8Ae7"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='rest1.html'">Back</button>	
+<button onclick="location.href='sheikh.html'">Next</button>
+</div>
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

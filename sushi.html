@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Sushi Ya</h2>
+
+<img src="pic/sushi.jpg"
+alt="Sushi Ya"
+class="main-restaurant-img">
+
+<p class="desc">
+Sushi Ya offers a variety of Japanese cuisine in a casual and comfortable dining environment.
+<br><br>
+
+Known for its selection of sushi, bento sets, rice dishes, noodles, and side dishes, the restaurant provides options suitable for both individual meals and group dining.
+<br><br>
+
+Sushi Ya is a popular choice among local diners looking for affordable Japanese food and a relaxed place to enjoy meals with friends and family.
+
+</p></div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 24, 3, K8, Taman Puspa Kencana, 05460 Alor Setar, Kedah, Malaysia.</p>
+
+<p>🕒 Opening Hours: 7:30 AM - 12:30 PM (Daily)</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.3/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fsy1.jpg" alt="Spicy Kimchi Ramen">
+
+<h3>Spicy Kimchi Ramen</h3>
+
+<p>
+Spicy Kimchi Ramen is a ramen dish served with spicy kimchi, giving the soup a rich, tangy, and slightly spicy flavor.</p>
+<p><b>RM26.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fsy2.jpg" alt="Teriyaki Chicken Ramen">
+
+<h3>Teriyaki Chicken Ramen</h3>
+
+<p>
+Teriyaki Chicken Ramen is a ramen dish with noodles served in broth and topped with grilled chicken coated in sweet and savory teriyaki sauce.<p><b>RM19.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fsy3.jpg" alt="Hana Maki">
+
+<h3>Hana Maki</h3>
+
+<p>
+Hana Maki is a sushi dish made with fresh salmon and rice, prepared in a rolled style with a rich and flavorful taste.</p>
+<p><b>RM1.99 (per pc)</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/sushi.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>My experience at Sushi Ya was enjoyable as the restaurant had a comfortable atmosphere and a good variety of Japanese dishes. The food was served well, tasted satisfying, and the menu offered many choices suitable for different preferences. Overall, it was a pleasant dining experience and a nice place to enjoy a meal with family or friends.</p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Sushi Ya',
+'pic/sushi.jpg',
+'sushi.html'
+)">
+❤️ Add to Favorites
+</button>
+
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/A4163iaPFnEAoCEW8"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='alor.html'">Back</button>	
+<button onclick="location.href='favourites.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

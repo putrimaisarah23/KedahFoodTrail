@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>The 1997 Coffee</h2>
+
+<img src="pic/1997.jpg"
+alt="The 1997 Coffee"
+class="main-restaurant-img">
+
+<p class="desc">
+    The 1997 Coffee is a modern café in Sungai Petani that offers a comfortable and stylish dining environment for coffee lovers and casual visitors.
+<br><br>
+
+Known for its coffee selection and café-style menu, it serves a variety of beverages, desserts, and light meals, making it a suitable place for relaxing, studying, or spending time with friends and family.
+<br><br>
+
+The café has become a popular spot among locals for its cozy atmosphere and social dining experience.
+
+</p>
+
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: Jalan Batik 2/1A, Sungai Petani, Kedah</p>
+
+<p>🕒 Opening Hours: 10:00 AM – 10:00 PM</p>
+
+<p>💰 Price Range: RM1 – RM20 (per person)</p>
+
+<p>⭐ Rating: 4.8 / 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/19973.jpg" alt="Spicy Chicken Buttermilk">
+
+<h3>Spicy Buttermilk Chicken</h3>
+
+<p>
+Crispy chicken served with creamy buttermilk sauce and a spicy kick, paired with rice for a flavorful and satisfying meal.
+</p>
+
+<p><b>RM12.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/19972.jpg" alt="'97 Coffee">
+
+<h3>'97 Coffee</h3>
+
+<p>
+A signature coffee drink with a rich, smooth taste, offering a balanced blend of coffee and creamy flavors.</p>
+
+<p><b>RM12</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/19971.jpg" alt="Creamy Tomyam Pasta">
+
+<h3>Creamy Tomyam Pasta</h3>
+
+<p>
+A flavorful pasta dish coated in creamy tomyam sauce, combining spicy, tangy, and rich flavors in one meal.</p>
+
+<p><b>RM13.90</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/19.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p> The 1997 Coffee is a cozy café with a nice atmosphere, good for chilling or hanging out with friends. The drinks and food are tasty, especially their signature coffee and creamy dishes, and the prices are quite reasonable. </p> 
+</div> 
+
+
+
+<div class="section">
+
+    
+
+       <button class="btn"
+onclick="favorite(
+'The 1997 Coffee',
+'pic/1997.jpg',
+'1997.html'
+)">
+❤️ Add to Favorites
+</button>
+
+        <br><br>
+
+        <a class="btn"
+        href="https://maps.app.goo.gl/DD2gBv1ZVtuXfkuc9"
+        target="_blank">
+        📍 View on Google Maps
+        </a>
+
+    </div>
+
+
+
+<div class="button-container">	
+<button onclick="location.href='restaurants.html'">Back</button>	
+<button onclick="location.href='galley.html'">Next</button>
+
+</div>
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+
+function favorite(){
+alert("Restaurant added to favorites!");
+}
+
+function rate(star){
+alert("You rated " + star + " stars!");
+}
+
+</script>
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

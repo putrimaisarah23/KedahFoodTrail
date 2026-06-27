@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Overstepped Cafe</h2>
+
+<img src="pic/os.jpg"
+alt="Overstepped Cafe"
+class="main-restaurant-img">
+
+<p class="desc">
+Overstepped Cafe is a casual café in Sungai Petani that offers a relaxed hangout environment with a mix of local and Western-style food and drinks.
+<br><br>
+
+The menu usually includes light meals, snacks, coffee, and refreshing beverages, making it suitable for quick meals, study sessions, or casual meetups with friends.
+<br><br>
+
+It is known as a comfortable neighbourhood café where customers can chill and enjoy simple, affordable café-style dining in a laid-back atmosphere.
+</p>
+
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: No. 5, Tingkat 1, Jalan Perdana Heights 1/1, Perdana Heights, 08000 Sungai Petani, Kedah.</p>
+
+<p>🕒 Opening Hours: 12:00 PM - 11:45 PM (Tue-Sun)</p>
+
+<p>💰 Price Range: RM20 – RM40 (per person)</p>
+
+<p>⭐ Rating: 4.4/ 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/fo1.jpg" alt="Pinky Salmon Pasta">
+
+<h3>Pinky Salmon Pasta</h3>
+
+<p>
+Pinky Salmon Pasta is a creamy pink sauce pasta served with tender salmon, giving a rich and slightly tangy flavor.</p>
+<p><b>RM27.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fo2.jpg" alt="Seafood Marinara">
+
+<h3>Seafood Marinara</h3>
+
+<p>
+Seafood Marinara is a pasta dish with a rich tomato sauce mixed with seafood like prawns, squid, and mussels, giving a savoury and slightly tangy taste.
+
+</p>
+
+<p><b>RM24.90</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/fo3.jpg" alt="Chicken Chop & Grilled Combo Platter">
+
+<h3>Chicken Chop & Grilled Combo Platter</h3>
+
+<p>
+Chicken Chop & Grilled Combo Platter is a dual-meat combo platter which combines both deep-fried chop and the grilled thigh on one plate.</p>
+<p><b>RM20.90</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/os.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p>I had a good experience here. The café has a chill and comfortable vibe, making it a nice place to hang out or do work. The food and drinks were decent, with simple but tasty options at reasonable prices. Service was also friendly and overall it’s a nice spot for a casual meal or coffee break.</p> 
+</div> 
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Overstepped Cafe',
+'pic/os.jpg',
+'overstepped.html'
+)">
+❤️ Add to Favorites
+</button>
+
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/dWGndsEd5a6H3ZX58"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='tersorok.html'">Back</button>	
+<button onclick="location.href='rest1.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+   <div class="sidebar">
+    <h3>Filter Restaurants</h3>
+
+    <button class="filter-btn active" onclick="filterRestaurants('all')">
+        🍽️ All
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('cafe')">
+        ☕ Cafés 
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('local')">
+        🍛 Local Food
+    </button>
+
+    <button class="filter-btn" onclick="filterRestaurants('japanese')">
+        🍣 Japanese Food
+    </button>
+</div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-area">
+
+        <div class="top-search">
+            <input type="text" id="searchInput" placeholder="🔍 Search restaurant">
+        </div>
+
+
+<!-- HERO -->
+<div class="hero">
+    <h2>Discover Kedah’s Best Food Spots 🍷🤍</h2>
+    <p>A personal food journey of cafés, local delights & dinner spots.</p>
+</div>
+<br>
+
+<!-- ⭐ TOP 3 -->
+<div id="top3" class="section">
+    <h2>☕ Cafés</h2>
+
+    <div class="grid">
+
+        <div class="card cafe">
+            <img src="pic/1997.jpg">
+            <h3>The 1997 Coffee</h3>
+            <p>The 1997 Coffee is a modern café serving coffee, desserts, and light meals in a stylish and relaxing environment.</p>
+            <a class="btn" href="1997.html">View More</a>
+        </div>
+
+        <div class="card cafe">
+            <img src="pic/gall.jpg">
+            <h3>Big Galley's Cafe</h3>
+            <p>Big Galley’s Cafe serves Western and Malaysian food in a cozy setting with big portions and affordable prices.</p>
+            <a class="btn" href="galley.html">View More</a>
+        </div>
+
+        <div class="card cafe">
+            <img src="pic/tersorok.jpg">
+            <h3>Tersorok Cafe</h3>
+            <p>Tersorok Cafe is a hidden-style café serving local food, snacks, and drinks in a quiet, laid-back atmosphere.</p>
+            <a class="btn" href="tersorok.html">View More</a>
+        </div>
+
+	<div class="card cafe">
+            <img src="pic/os.jpg">
+            <h3>Overstepped Cafe</h3>
+            <p>Overstepped Cafe is a laid-back café offering coffee, snacks, and light Western-style meals in a relaxed hangout spot.</p>
+            <a class="btn" href="overstepped.html">View More</a>
+        </div>
+
+	<div class="card cafe">
+            <img src="pic/big2.jpg">
+            <h3>Big Tas Tea</h3>
+            <p>Big Tas Tea is a casual dining restaurant and café that offers a variety of meals and beverages, including western dishes, local cuisine, desserts, and signature drinks in a comfortable family-friendly setting.</p>
+            <a class="btn" href="rest1.html">View More</a>
+        </div>
+    </div>
+</div>
+
+<!-- 🍜 LOCAL FOOD (4-7) -->
+<div id="local" class="section">
+    <h2>🍜 Local Food</h2>
+
+    <div class="grid">
+
+        <div class="card local">
+            <img src="pic/morning.jpg">
+            <h3>Morning Kedah Restaurant</h3>
+            <p>Morning Kedah Restaurant is a cozy restaurant serving local Malaysian food and breakfast dishes in a casual setting.</p>
+            <a class="btn" href="morning.html">View More</a>
+        </div>
+
+        <div class="card local">
+            <img src="pic/sheikh.jpg">
+            <h3>Sheikh Bistro</h3>
+            <p>Sheikh Bistro is a casual eatery serving everyday Malaysian dishes like rice meals, noodles, and simple local favorites.</p>
+            <a class="btn" href="sheikh.html">View More</a>
+        </div>
+
+        <div class="card local">
+            <img src="pic/merbok.jpg">
+            <h3>Merbok Roasted</h3>
+            <p>Merbok Roasted is a local spot known for roasted-style dishes, especially chicken and rice meals served in a simple, casual setting.</p>
+            <a class="btn" href="merbok.html">View More</a>
+        </div>
+
+        <div class="card local">
+            <img src="pic/alor.jpg">
+            <h3>Alor Setar </h3>
+            <p>Alor Setar Breakfast Station is a breakfast spot serving local morning favorites and simple meals in a casual setting.</p>
+            <a class="btn" href="alor.html">View More</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ☕ CAFÉ (8-9) -->
+<div id="cafe" class="section">
+    <h2>🍣 Japanese Food</h2>
+
+    <div class="grid">
+
+        <div class="card japanese">
+            <img src="pic/sushi.jpg">
+            <h3>Sushi Ya</h3>
+            <p>Sushi Ya is a casual Japanese restaurant serving sushi, bento, and other simple Japanese dishes at affordable prices.</p>
+            <a class="btn" href="sushi.html">View More</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="button-container">	
+<button onclick="location.href='index.html'">Back</button>	
+<button onclick="location.href='1997.html'">Next</button>
+</div>
+</div>
+</div>
+<footer>
+    <p>© 2026 Kedah Food Trail</p>
+</footer>
+
+<script>
+function filterRestaurants(category) {
+    let cards = document.querySelectorAll('.card');
+    let buttons = document.querySelectorAll('.filter-btn');
+
+    // remove active class semua button
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // add active pada button yang klik
+    event.target.classList.add('active');
+
+    cards.forEach(card => {
+
+        if (category === 'all') {
+            card.style.display = "block";
+        } else {
+            if (card.classList.contains(category)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        }
+
+    });
+}
+</script>
+
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function () {
+    let input = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let name = card.querySelector("h3").innerText.toLowerCase();
+
+        if (name.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

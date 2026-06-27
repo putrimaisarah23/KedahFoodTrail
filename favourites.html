@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>❤️ My Favorite Restaurants</h2>
+
+<div class="grid" id="favContainer">
+
+</div>
+
+</div>
+
+<div class="button-container">	
+<button onclick="location.href='sushi.html'">Back</button>	
+<button onclick="location.href='contact.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+<script>
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+let container =
+document.getElementById("favContainer");
+
+
+favorites.forEach(function(item){
+
+container.innerHTML += `
+
+<div class="card">
+
+<img src="${item.image}">
+
+<h3>${item.name}</h3>
+
+<a class="btn"
+href="${item.page}">
+View More
+</a>
+
+<br>
+
+<button class="remove-btn"
+onclick="removeFav('${item.name}')">
+❌ Remove
+</button>
+
+</div>
+
+`;
+
+});
+
+
+function removeFav(name){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites"));
+
+favorites =
+favorites.filter(item =>
+item.name!==name
+);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+location.reload();
+
+}
+
+</script>
+

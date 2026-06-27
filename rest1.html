@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kedah Food Trail</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+@font-face {
+    font-family: rustic;
+    src: url("font/rustic.ttf");
+}
+
+@font-face {
+    font-family: alter;
+    src: url("font/alter.ttf");
+}
+</style>
+
+</head>
+<body>
+<div class="main-content">
+<header>
+    <h1>🍜 Kedah Food Trail</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+	<a href="favourites.html">Favourites</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="section">
+
+<h2>Big Tas Tea</h2>
+
+<img src="pic/big.jpg"
+alt="Big Tas Tea"
+class="main-restaurant-img">
+
+<p class="desc">
+    Big Tas'Tea HQ is a popular café-style restaurant in Sungai Petani that offers a mix of Western and Asian cuisine in a casual dining environment.
+    <br><br>
+
+    Known for its wide menu selection, the restaurant serves grilled dishes, pasta, rice meals, snacks, desserts, and signature beverages, making it a popular gathering spot for friends and families.
+    <br><br>
+
+    Big Tas’Tea started in Sungai Petani and later expanded into a growing local food and beverage brand across Malaysia.
+  </p>
+
+</div>
+<div class="info-box">
+
+<h2>Restaurant Information</h2>
+
+<p>📍 Location: 1 & 3 ground floor, 2, Persiaran BLM 6/2 08000 Sungai Petani Kedah </p>
+
+<p>🕒 Opening Hours: 12:00PM – 11:00 PM</p>
+
+<p>💰 Price Range: RM20 – RM40 (per person)</p>
+
+<p>⭐ Rating: 4.5 / 5</p>
+
+</div>
+
+<br><br>
+
+<div class="section menu-box">
+
+<h2>🍽 Signature Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="pic/food1.jpg" alt="Nasi Lemak Ayam">
+
+<h3>Chicken Penne Arrabiata</h3>
+
+<p>
+Penne pasta cooked with arrabiata sauce, tomato, chicken, parmesan cheese.
+</p>
+
+<p><b>RM16.80</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/food2.jpg" alt="Beef Rendang">
+
+<h3>Beef Lasagna</h3>
+
+<p>
+Baked lasagna stuffed with bolognese beef and topped with cheese.
+</p>
+
+<p><b>RM19.80</b></p>
+
+</div>
+
+
+<div class="card">
+
+<img src="pic/food3.jpg" alt="Teh Ais">
+
+<h3>Spaghetti Bolognese</h3>
+
+<p>
+Spaghetti with delicious tomato sauce, serve with minced meat.
+</p>
+
+<p><b>RM15.80</b></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎥 Quick Restaurant Tour</h2>
+
+<video class="restaurant-video" controls>
+
+<source src="vid/big.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+<p class="video-text">
+Take a quick look at the restaurant atmosphere,
+food presentation and dining experience.
+</p>
+
+</div>
+
+
+<div class="section-dark">
+
+<h2>⭐ My Review</h2>
+
+<p> Big Tas Tea offers a cozy atmosphere and a variety of delicious menu choices.<br>I especially enjoyed the food presentation and relaxing environment. </p> 
+</div> 
+
+
+
+<div class="section">
+
+<button class="btn"
+onclick="favorite(
+'Big Tas Tea',
+'pic/big2.jpg',
+'rest1.html'
+)">
+❤️ Add to Favorites
+</button>
+<br><br>
+
+<a class="btn"
+href="https://maps.app.goo.gl/PLRxZ76bK1ZUb2sB9?g_st=ic"
+target="_blank">
+
+📍 View on Google Maps
+
+</a>
+
+</div>
+
+
+<div class="button-container">	
+<button onclick="location.href='overstepped.html'">Back</button>	
+<button onclick="location.href='morning.html'">Next</button>
+</div>
+
+
+<footer>
+
+<p>© 2026 Kedah Food Trail</p>
+
+</footer>
+
+<script>
+function favorite(name, image, page){
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+/* check kalau dah ada */
+let exist = favorites.find(item => item.name===name);
+
+if(!exist){
+
+favorites.push({
+name:name,
+image:image,
+page:page
+});
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+alert("Added to Favorites ❤️");
+
+}
+else{
+alert("Already in Favorites");
+}
+
+}
+</script>
+</body>
+</html>
